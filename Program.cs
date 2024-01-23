@@ -21,5 +21,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+// Run Command to kill instance, lsof -ti tcp:5900 | xargs kill
 app.Run();
