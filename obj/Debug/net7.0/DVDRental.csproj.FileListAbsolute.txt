@@ -17,13 +17,13 @@
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.csproj.CoreCompileInputs.cache
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.MvcApplicationPartsAssemblyInfo.cs
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.MvcApplicationPartsAssemblyInfo.cache
+/Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets.build.json
+/Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets.development.json
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets/msbuild.DVDRental.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets/msbuild.build.DVDRental.props
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.DVDRental.props
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.DVDRental.props
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets.pack.json
-/Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets.build.json
-/Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/staticwebassets.development.json
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/scopedcss/bundle/DVDRental.styles.css
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.csproj.CopyComplete
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.dll
@@ -31,3 +31,11 @@
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.pdb
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/DVDRental.genruntimeconfig.cache
 /Users/davidsanders/Projects/DVDRental.API/obj/Debug/net7.0/ref/DVDRental.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Humanizer.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/davidsanders/Projects/DVDRental.API/bin/Debug/net7.0/System.CodeDom.dll
