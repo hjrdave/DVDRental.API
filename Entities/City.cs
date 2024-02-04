@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace DVDRental;
+namespace DVDRental.Entities;
 
 public class City
 {

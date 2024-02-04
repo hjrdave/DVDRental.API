@@ -1,4 +1,4 @@
-﻿namespace DVDRental;
+﻿namespace DVDRental.Entities;
 
 public class Payment
 {
