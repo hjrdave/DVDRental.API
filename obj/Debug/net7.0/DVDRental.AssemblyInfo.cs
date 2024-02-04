@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DVDRental")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04c5153fffc1f324fca6856f50e292e674ce76a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("DVDRental")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DVDRental")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

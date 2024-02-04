@@ -168,6 +168,12 @@
       "Npgsql/7.0.6": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Npgsql.dll": {
+            "assemblyVersion": "7.0.6.0",
+            "fileVersion": "7.0.6.0"
+          }
         }
       },
       "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.11": {
@@ -176,6 +182,12 @@
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.15",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Npgsql": "7.0.6"
+        },
+        "runtime": {
+          "lib/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.11.0"
+          }
         }
       },
       "Swashbuckle.AspNetCore/6.4.0": {
