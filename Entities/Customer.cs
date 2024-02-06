@@ -11,7 +11,7 @@ public class Customer
     public string? Email {get; set;}
     public int AddressId {get; set;}
     public bool ActiveBool {get; set;}
-    public DateTime CreateDate {get; set;}
+    public DateTime? CreateDate {get; set;}
     public TimestampAttribute? LastUpdate {get; set;}
     public bool Active {get; set;}
 

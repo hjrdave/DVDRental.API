@@ -1,0 +1,21 @@
+# To Find the Host of your container run below
+# docker inspect [CONTAINER_ID] | grep IPAddress
+services:
+  db:
+    container_name: dvdrental
+    image: kristiandupont/dvdrental-image
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
