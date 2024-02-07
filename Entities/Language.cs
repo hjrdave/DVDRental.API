@@ -3,15 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DVDRental.Entities
 {
-    [Table("category", Schema = "public")]
-    public class Category
+    [Table("language", Schema = "public")]
+    public class Language
     {
         [Key]
-        [Column("category_id")]
-        public int CategoryId { get; set; }
+        [Column("language_id")]
+        public int LanguageId { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
-        [StringLength(25, ErrorMessage = "Name cannot be longer than 25 characters")]
+        [StringLength(20, ErrorMessage = "Name cannot be longer than 20 characters")]
         [Column("name")]
         public string? Name { get; set; }
 

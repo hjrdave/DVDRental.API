@@ -1,10 +1,27 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DVDRental.Entities;
-
-public class FilmCategory
+namespace DVDRental.Entities
 {
-    public int Id {get; set;}
-    public int CategoryId {get; set;}
-    public TimestampAttribute? LastUpdate {get; set;}
+    [Table("film_category", Schema = "public")]
+    public class FilmCategory
+    {
+        [Key]
+        [Column("film_id")]
+        public short FilmId { get; set; }
+
+        [Key]
+        [Column("category_id")]
+        public short CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Last update is required")]
+        [Column("last_update")]
+        public DateTime LastUpdate { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual Category? Category { get; set; }
+
+        [ForeignKey("FilmId")]
+        public virtual Film? Film { get; set; }
+    }
 }

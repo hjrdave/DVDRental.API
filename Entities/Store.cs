@@ -1,11 +1,31 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DVDRental.Entities;
-
-public class Store
+namespace DVDRental.Entities
 {
-    public int StoreId {get; set;}
-    public int ManagerStaffId {get; set;}
-    public int AddressId {get; set;}
-    public TimestampAttribute? LastUpdate {get; set;}
+    [Table("store", Schema = "public")]
+    public class Store
+    {
+        [Key]
+        [Column("store_id")]
+        public int StoreId { get; set; }
+
+        [Required(ErrorMessage = "Manager staff ID is required")]
+        [Column("manager_staff_id")]
+        public short ManagerStaffId { get; set; }
+
+        [Required(ErrorMessage = "Address ID is required")]
+        [Column("address_id")]
+        public short AddressId { get; set; }
+
+        [Required(ErrorMessage = "Last update is required")]
+        [Column("last_update")]
+        public DateTime LastUpdate { get; set; }
+
+        [ForeignKey("ManagerStaffId")]
+        public virtual Staff? ManagerStaff { get; set; }
+
+        [ForeignKey("AddressId")]
+        public virtual Address? Address { get; set; }
+    }
 }

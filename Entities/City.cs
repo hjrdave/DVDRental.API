@@ -1,11 +1,29 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace DVDRental.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class City
+namespace DVDRental.Entities
 {
-    public int Id {get; set;}
-    public string? Name {get; set;}
-    public int CountryId {get; set;}
-    public TimestampAttribute? LastUpdate {get; set;}
+    [Table("city", Schema = "public")]
+    public class City
+    {
+        [Key]
+        [Column("city_id")]
+        public int CityId { get; set; }
 
+        [Required(ErrorMessage = "City name is required")]
+        [StringLength(50, ErrorMessage = "City name cannot be longer than 50 characters")]
+        [Column("city")]
+        public string? CityName { get; set; }
+
+        [Required(ErrorMessage = "Country ID is required")]
+        [Column("country_id")]
+        public short CountryId { get; set; }
+
+        [Required(ErrorMessage = "Last update is required")]
+        [Column("last_update")]
+        public DateTime LastUpdate { get; set; }
+
+        [ForeignKey("CountryId")]
+        public virtual Country? Country { get; set; }
+    }
 }
