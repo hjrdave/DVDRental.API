@@ -1,6 +1,12 @@
+using DVDRental.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<DVDRentalDbContext>(options => {
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DVDRentalContext"));
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -14,7 +20,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+};
 
 app.UseHttpsRedirection();
 
