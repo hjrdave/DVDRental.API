@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DVDRental.Entities
@@ -26,7 +27,7 @@ namespace DVDRental.Entities
 
         [Required(ErrorMessage = "City ID is required")]
         [Column("city_id")]
-        public short CityId { get; set; }
+        public int CityId { get; set; } // Change data type to int
 
         [StringLength(10, ErrorMessage = "Postal code cannot be longer than 10 characters")]
         [Column("postal_code")]

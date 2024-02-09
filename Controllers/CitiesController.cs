@@ -6,17 +6,17 @@ namespace DVDRental.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ActorsController : ControllerBase
+public class CitiesController : ControllerBase
 {
     private readonly DVDRentalDbContext context;
-    public ActorsController(DVDRentalDbContext context)
+    public CitiesController(DVDRentalDbContext context)
     {
         this.context = context;
     }
-    [HttpGet(Name = "AllActors")]
+    [HttpGet(Name = "AllCities")]
     public async Task<ActionResult> Get()
     {
-        var actors = await context.Actors.ToListAsync();
-        return Ok(actors);
+        var cities = await context.Cities.ToListAsync();
+        return Ok(cities);
     }
 }

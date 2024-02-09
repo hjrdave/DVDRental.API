@@ -10,7 +10,6 @@ namespace DVDRental.Entities
         [Column("actor_id")]
         public short ActorId { get; set; }
 
-        [Key]
         [Column("film_id")]
         public short FilmId { get; set; }
 
