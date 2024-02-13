@@ -29,13 +29,5 @@ namespace DVDRental.Entities
         [Column("payment_date")]
         public DateTime PaymentDate { get; set; }
 
-        [ForeignKey("CustomerId")]
-        public virtual Customer? Customer { get; set; }
-
-        [ForeignKey("RentalId")]
-        public virtual Rental? Rental { get; set; }
-
-        [ForeignKey("StaffId")]
-        public virtual Staff? Staff { get; set; }
     }
 }

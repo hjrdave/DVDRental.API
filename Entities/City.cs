@@ -22,8 +22,5 @@ namespace DVDRental.Entities
         [Required(ErrorMessage = "Last update is required")]
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
-
-        [ForeignKey("CountryId")]
-        public virtual Country? Country { get; set; }
     }
 }

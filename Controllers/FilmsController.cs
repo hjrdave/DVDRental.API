@@ -17,6 +17,7 @@ public class FilmsController : ControllerBase
     public async Task<ActionResult> Get()
     {
         var films = await context.Films.ToListAsync();
+        
         return Ok(films);
     }
 }

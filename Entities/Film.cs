@@ -40,8 +40,8 @@ namespace DVDRental.Entities
         [Column("replacement_cost")]
         public decimal ReplacementCost { get; set; }
 
-        [Column("rating")]
-        public MpaaRating? Rating { get; set; }
+        // [Column("rating")]
+        // public MpaaRating? Rating { get; set; }
 
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
@@ -49,12 +49,10 @@ namespace DVDRental.Entities
         [Column("special_features")]
         public string[]? SpecialFeatures { get; set; }
 
-        [Required(ErrorMessage = "Fulltext is required")]
-        [Column("fulltext")]
-        public string? Fulltext { get; set; }
+        // [Required(ErrorMessage = "Fulltext is required")]
+        // [Column("fulltext")]
+        // public string? Fulltext { get; set; }
 
-        [ForeignKey("LanguageId")]
-        public virtual Language? Language { get; set; }
     }
 
     public enum MpaaRating

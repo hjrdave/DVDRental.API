@@ -17,10 +17,5 @@ namespace DVDRental.Entities
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
 
-        [ForeignKey("ActorId")]
-        public virtual Actor? Actor { get; set; }
-
-        [ForeignKey("FilmId")]
-        public virtual Film? Film { get; set; }
     }
 }

@@ -33,13 +33,5 @@ namespace DVDRental.Entities
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
 
-        [ForeignKey("CustomerId")]
-        public virtual Customer? Customer { get; set; }
-
-        [ForeignKey("InventoryId")]
-        public virtual Inventory? Inventory { get; set; }
-
-        [ForeignKey("StaffId")]
-        public virtual Staff? Staff { get; set; }
     }
 }

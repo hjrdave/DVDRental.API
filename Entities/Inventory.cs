@@ -21,8 +21,5 @@ namespace DVDRental.Entities
         [Required(ErrorMessage = "Last update is required")]
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
-
-        [ForeignKey("FilmId")]
-        public virtual Film? Film { get; set; }
     }
 }

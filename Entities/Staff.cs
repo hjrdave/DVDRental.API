@@ -50,7 +50,5 @@ namespace DVDRental.Entities
         [Column("picture")]
         public byte[]? Picture { get; set; }
 
-        [ForeignKey("AddressId")]
-        public virtual Address? Address { get; set; }
     }
 }

@@ -42,7 +42,5 @@ namespace DVDRental.Entities
         [Column("last_update")]
         public DateTime LastUpdate { get; set; }
 
-        [ForeignKey("CityId")]
-        public virtual City? City { get; set; }
     }
 }
