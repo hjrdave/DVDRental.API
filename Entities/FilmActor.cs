@@ -8,10 +8,10 @@ namespace DVDRental.Entities
     {
         [Key]
         [Column("actor_id")]
-        public short ActorId { get; set; }
+        public int ActorId { get; set; }
 
         [Column("film_id")]
-        public short FilmId { get; set; }
+        public int FilmId { get; set; }
 
         [Required(ErrorMessage = "Last update is required")]
         [Column("last_update")]

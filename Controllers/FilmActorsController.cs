@@ -19,4 +19,10 @@ public class FilmActorsController : ControllerBase
         var filmActors = await context.FilmActors.ToListAsync();
         return Ok(filmActors);
     }
+    [HttpGet("{id:int}", Name = "GetFilmActorById")]
+    public async Task<ActionResult> GetFilmActor(int id)
+    {
+        var filmActorById = await context.FilmActors.FindAsync(id);
+        return filmActorById == null ? NotFound() : Ok(filmActorById);
+    }
 }

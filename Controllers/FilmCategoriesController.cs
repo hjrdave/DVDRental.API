@@ -19,4 +19,10 @@ public class FilmCategoriesController : ControllerBase
         var filmCategories = await context.FilmCategories.ToListAsync();
         return Ok(filmCategories);
     }
+    [HttpGet("{id:int}", Name = "GetFilmCategoryById")]
+    public async Task<ActionResult> GetFilmCategory(int id)
+    {
+        var categoryById = await context.Categories.FindAsync(id);
+        return categoryById == null ? NotFound() : Ok(categoryById);
+    }
 }

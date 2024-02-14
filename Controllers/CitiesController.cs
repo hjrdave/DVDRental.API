@@ -19,4 +19,10 @@ public class CitiesController : ControllerBase
         var cities = await context.Cities.ToListAsync();
         return Ok(cities);
     }
+    [HttpGet("{id:int}", Name = "GetCityById")]
+    public async Task<ActionResult> GetCity(int id)
+    {
+        var cityById = await context.Cities.FindAsync(id);
+        return cityById == null ? NotFound() : Ok(cityById);
+    }
 }

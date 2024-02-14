@@ -19,4 +19,10 @@ public class AddressesController : ControllerBase
         var addresses = await context.Addresses.ToListAsync();
         return Ok(addresses);
     }
+    [HttpGet("{id:int}", Name = "GetAddressById")]
+    public async Task<ActionResult> GetAddress(int id)
+    {
+        var addressById = await context.Addresses.FindAsync(id);
+        return addressById == null ? NotFound() : Ok(addressById);
+    }
 }

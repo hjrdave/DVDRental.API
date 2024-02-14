@@ -19,4 +19,10 @@ public class ActorsController : ControllerBase
         var actors = await context.Actors.ToListAsync();
         return Ok(actors);
     }
+    [HttpGet("{id:int}", Name = "GetActorById")]
+    public async Task<ActionResult> GetActor(int id)
+    {
+        var actorById = await context.Actors.FindAsync(id);
+        return actorById == null ? NotFound() : Ok(actorById);
+    }
 }

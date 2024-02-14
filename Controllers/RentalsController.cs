@@ -19,4 +19,10 @@ public class RentalsController : ControllerBase
         var rentals = await context.Rentals.ToListAsync();
         return Ok(rentals);
     }
+    [HttpGet("{id:int}", Name = "GetRentalById")]
+    public async Task<ActionResult> GetRental(int id)
+    {
+        var rentalId = await context.Rentals.FindAsync(id);
+        return rentalId == null ? NotFound() : Ok(rentalId);
+    }
 }

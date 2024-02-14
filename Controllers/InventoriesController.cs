@@ -19,4 +19,10 @@ public class InventoriesController : ControllerBase
         var inventories = await context.Inventories.ToListAsync();
         return Ok(inventories);
     }
+    [HttpGet("{id:int}", Name = "GetInventoryById")]
+    public async Task<ActionResult> GetInventory(int id)
+    {
+        var inventoryId = await context.Languages.FindAsync(id);
+        return inventoryId == null ? NotFound() : Ok(inventoryId);
+    }
 }

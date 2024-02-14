@@ -19,4 +19,10 @@ public class CountriesController : ControllerBase
         var countries = await context.Countries.ToListAsync();
         return Ok(countries);
     }
+    [HttpGet("{id:int}", Name = "GetCountryById")]
+    public async Task<ActionResult> GetCountry(int id)
+    {
+        var countryById = await context.Countries.FindAsync(id);
+        return countryById == null ? NotFound() : Ok(countryById);
+    }
 }

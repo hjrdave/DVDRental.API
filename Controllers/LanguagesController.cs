@@ -19,4 +19,10 @@ public class LanguagesController : ControllerBase
         var languages = await context.Languages.ToListAsync();
         return Ok(languages);
     }
+    [HttpGet("{id:int}", Name = "GetLanguageById")]
+    public async Task<ActionResult> GetLanguage(int id)
+    {
+        var languageId = await context.Languages.FindAsync(id);
+        return languageId == null ? NotFound() : Ok(languageId);
+    }
 }

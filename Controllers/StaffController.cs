@@ -19,4 +19,10 @@ public class StaffController : ControllerBase
         var staff = await context.Staff.ToListAsync();
         return Ok(staff);
     }
+    [HttpGet("{id:int}", Name = "GetStaffById")]
+    public async Task<ActionResult> GetStaff(int id)
+    {
+        var staffId = await context.Staff.FindAsync(id);
+        return staffId == null ? NotFound() : Ok(staffId);
+    }
 }

@@ -19,4 +19,10 @@ public class PaymentsController : ControllerBase
         var payments = await context.Payments.ToListAsync();
         return Ok(payments);
     }
+    [HttpGet("{id:int}", Name = "GetPaymentById")]
+    public async Task<ActionResult> GetPayment(int id)
+    {
+        var paymentId = await context.Payments.FindAsync(id);
+        return paymentId == null ? NotFound() : Ok(paymentId);
+    }
 }

@@ -19,4 +19,10 @@ public class CustomersController : ControllerBase
         var customers = await context.Customers.ToListAsync();
         return Ok(customers);
     }
+    [HttpGet("{id:int}", Name = "GetCustomerById")]
+    public async Task<ActionResult> GetCustomer(int id)
+    {
+        var customerById = await context.Customers.FindAsync(id);
+        return customerById == null ? NotFound() : Ok(customerById);
+    }
 }

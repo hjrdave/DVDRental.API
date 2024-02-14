@@ -20,4 +20,10 @@ public class FilmsController : ControllerBase
         
         return Ok(films);
     }
+    [HttpGet("{id:int}", Name = "GetFilmById")]
+    public async Task<ActionResult> GetFilm(int id)
+    {
+        var filmById = await context.Films.FindAsync(id);
+        return filmById == null ? NotFound() : Ok(filmById);
+    }
 }

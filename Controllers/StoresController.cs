@@ -19,4 +19,10 @@ public class StoresController : ControllerBase
         var stores = await context.Stores.ToListAsync();
         return Ok(stores);
     }
+    [HttpGet("{id:int}", Name = "GetStoreById")]
+    public async Task<ActionResult> GetStore(int id)
+    {
+        var storeId = await context.Stores.FindAsync(id);
+        return storeId == null ? NotFound() : Ok(storeId);
+    }
 }
