@@ -14,10 +14,14 @@ public class PaymentsController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllPayments")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        int page = 1, 
+        int pageSize = 50
+    )
     {
-        var payments = await context.Payments.ToListAsync();
-        return Ok(payments);
+        var query = context.Payments.AsQueryable();
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
     [HttpGet("{id:int}", Name = "GetPaymentById")]
     public async Task<ActionResult> GetPayment(int id)

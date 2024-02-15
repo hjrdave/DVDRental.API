@@ -14,10 +14,18 @@ public class CountriesController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllCountries")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        string name = "", 
+        int page = 1, 
+        int pageSize = 50
+        )
     {
-        var countries = await context.Countries.ToListAsync();
-        return Ok(countries);
+        var query = context.Countries.AsQueryable();
+        if(!string.IsNullOrEmpty(name)){
+            query = query.Where(c => c.CountryName.ToLower() == name.ToLower()); 
+        }
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
     [HttpGet("{id:int}", Name = "GetCountryById")]
     public async Task<ActionResult> GetCountry(int id)

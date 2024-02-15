@@ -14,10 +14,14 @@ public class RentalsController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllRentals")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        int page = 1, 
+        int pageSize = 50
+    )
     {
-        var rentals = await context.Rentals.ToListAsync();
-        return Ok(rentals);
+        var query = context.Rentals.AsQueryable();
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
     [HttpGet("{id:int}", Name = "GetRentalById")]
     public async Task<ActionResult> GetRental(int id)

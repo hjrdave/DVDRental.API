@@ -14,10 +14,14 @@ public class InventoriesController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllInventories")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get( 
+        int page = 1, 
+        int pageSize = 5
+    )
     {
-        var inventories = await context.Inventories.ToListAsync();
-        return Ok(inventories);
+        var query = context.Inventories.AsQueryable();
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
     [HttpGet("{id:int}", Name = "GetInventoryById")]
     public async Task<ActionResult> GetInventory(int id)

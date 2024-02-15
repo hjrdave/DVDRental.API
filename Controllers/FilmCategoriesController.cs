@@ -14,10 +14,14 @@ public class FilmCategoriesController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllFilmCategories")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        int page = 1, 
+        int pageSize = 50
+    )
     {
-        var filmCategories = await context.FilmCategories.ToListAsync();
-        return Ok(filmCategories);
+        var query = context.Categories.AsQueryable();
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
     [HttpGet("{id:int}", Name = "GetFilmCategoryById")]
     public async Task<ActionResult> GetFilmCategory(int id)

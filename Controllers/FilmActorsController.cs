@@ -14,11 +14,16 @@ public class FilmActorsController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllFilmActors")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        int page = 1, 
+        int pageSize = 50
+    )
     {
-        var filmActors = await context.FilmActors.ToListAsync();
-        return Ok(filmActors);
+        var query = context.FilmActors.AsQueryable();
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
+
     [HttpGet("{id:int}", Name = "GetFilmActorById")]
     public async Task<ActionResult> GetFilmActor(int id)
     {

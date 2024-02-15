@@ -14,11 +14,29 @@ public class CustomersController : ControllerBase
         this.context = context;
     }
     [HttpGet(Name = "AllCustomers")]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Get(
+        string firstName = "", 
+        string lastName = "", 
+        string email = "",  
+        int page = 1, 
+        int pageSize = 50
+    )
     {
-        var customers = await context.Customers.ToListAsync();
-        return Ok(customers);
+        var query = context.Customers.AsQueryable();
+        if(!string.IsNullOrEmpty(firstName)){
+            query = query.Where(c => c.FirstName.ToLower() == firstName.ToLower()); 
+        }
+        if(!string.IsNullOrEmpty(lastName)){
+            query = query.Where(c => c.LastName.ToLower() == lastName.ToLower()); 
+        }
+        if(!string.IsNullOrEmpty(email)){
+            query = query.Where(c => c.Email.ToLower() == email.ToLower()); 
+        }
+        var results = await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+        return Ok(results);
     }
+    
+   
     [HttpGet("{id:int}", Name = "GetCustomerById")]
     public async Task<ActionResult> GetCustomer(int id)
     {
